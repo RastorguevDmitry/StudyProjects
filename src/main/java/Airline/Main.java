@@ -19,10 +19,8 @@ package Airline;
 import Airline.aircraft.Aircraft;
 import Airline.airline.Airline;
 
-
 import java.util.*;
 
-import static Airline.aircraft.Aircraft.capacityComparator;
 
 public class Main {
 
@@ -41,10 +39,9 @@ public class Main {
 //сортировка самолетов по пасажирам
         Collections.sort(listAircraft, Aircraft.capacityComparator);
 
-
 //сортировка самолетов по дальности полетов
         Collections.sort(listAircraft, Aircraft.rangeComparator);
-        for (Aircraft aircraft: listAircraft) {
+        for (Aircraft aircraft : listAircraft) {
             System.out.println(aircraft.range);
         }
 
@@ -56,10 +53,9 @@ public class Main {
         });
 
 //        Найти самолет в компании, соответствующий заданному диапазону параметров потребления горючего.
-
-
-        for (Aircraft aircraft: listAircraft) {
-            System.out.println(aircraft.range);
+        for (Aircraft aircraft : listAircraft) {
+            if (aircraft.fuelConsumption > 100 && aircraft.fuelConsumption <= 300)
+                aircraft.printAircraft();
         }
 
 //        while (true) {
@@ -96,10 +92,7 @@ public class Main {
 //            printMainText();
 //        }
 
-
-
     }
-
 
 
     public static void printMainText() {

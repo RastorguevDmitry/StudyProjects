@@ -23,13 +23,11 @@ public class Aircraft implements Comparable<Aircraft>{
 
     @Override
     public int compareTo(Aircraft o) {
-
         return (int) (this.fuelConsumption - o.fuelConsumption)*10000;
     }
 
     // компаратор сортирует список или массив объектов по грузопобьемность
     public static Comparator<Aircraft> cargoCapacityComparator = new Comparator<Aircraft>() {
-
         @Override
         public int compare(Aircraft e1, Aircraft e2) {
             return (int) (e1.cargoCapacity - e2.cargoCapacity);
@@ -38,7 +36,6 @@ public class Aircraft implements Comparable<Aircraft>{
 
     // компаратор сортирует список или массив объектов по пассажировместимости
     public static Comparator<Aircraft> capacityComparator = new Comparator<Aircraft>() {
-
         @Override
         public int compare(Aircraft e1, Aircraft e2) {
             return (int) (e1.capacity - e2.capacity);
@@ -47,14 +44,22 @@ public class Aircraft implements Comparable<Aircraft>{
 
     // компаратор сортирует список или массив объектов по дальности полета
     public static Comparator<Aircraft> rangeComparator = new Comparator<Aircraft>() {
-
         @Override
         public int compare(Aircraft e1, Aircraft e2) {
             return (int) (e1.range - e2.range);
         }
     };
 
+    public void printAircraft() {
+        System.out.println("id: " + id +
+                " aircraftManufacturer: " +aircraftManufacturer+
+                " type: " + type +
+                " capacity: " + capacity+
+                " cargoCapacity: " +cargoCapacity+
+                " range: " + range+
+                " fuelConsumption:" + fuelConsumption);
 
+    }
 
 
 }
