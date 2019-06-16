@@ -16,7 +16,7 @@ public class Airline {
     public Airline(String name) {
         this.name = name;
         try {
-            List<String> lines = Files.readAllLines(Paths.get("listAircraft.txt"), Charset.defaultCharset());
+            List<String> lines = Files.readAllLines(Paths.get("src/main/resources/listAircraft.txt"), Charset.defaultCharset());
 
             for (String line : lines) {
                 String allAboutAircraft[] = line.split(":");

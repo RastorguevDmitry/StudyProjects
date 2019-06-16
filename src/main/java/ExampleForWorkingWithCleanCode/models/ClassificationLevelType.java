@@ -1,5 +1,5 @@
 package ExampleForWorkingWithCleanCode.models;
 
-public enum ClassificationLevel {
+public enum ClassificationLevelType {
     UNCLASSIFIED, CONFIDENTIAL, SECRET, TOP_SECRET
 }

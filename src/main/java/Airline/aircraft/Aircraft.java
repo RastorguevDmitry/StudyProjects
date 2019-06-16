@@ -21,6 +21,46 @@ public class Aircraft implements Comparable<Aircraft>{
         this.fuelConsumption = fuelConsumption;
     }
 
+    public int getId() {
+        return id;
+    }
+
+    public String getAircraftManufacturer() {
+        return aircraftManufacturer;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public float getCargoCapacity() {
+        return cargoCapacity;
+    }
+
+    public float getRange() {
+        return range;
+    }
+
+    public float getFuelConsumption() {
+        return fuelConsumption;
+    }
+
+    public static Comparator<Aircraft> getCargoCapacityComparator() {
+        return cargoCapacityComparator;
+    }
+
+    public static Comparator<Aircraft> getCapacityComparator() {
+        return capacityComparator;
+    }
+
+    public static Comparator<Aircraft> getRangeComparator() {
+        return rangeComparator;
+    }
+
     @Override
     public int compareTo(Aircraft o) {
         return (int) (this.fuelConsumption - o.fuelConsumption)*10000;

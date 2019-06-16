@@ -39,6 +39,8 @@ public class Main {
 //сортировка самолетов по пасажирам
         Collections.sort(listAircraft, Aircraft.capacityComparator);
 
+        listAircraft.sort(Comparator.comparing(Aircraft::getCapacity).thenComparing(Aircraft::getId));
+
 //сортировка самолетов по дальности полетов
         Collections.sort(listAircraft, Aircraft.rangeComparator);
         for (Aircraft aircraft : listAircraft) {
@@ -46,6 +48,14 @@ public class Main {
         }
 
 //сортировка самолетов по потреблению топлива
+        Collections.sort(listAircraft, ((o1, o2) -> (int) (o1.fuelConsumption-o2.fuelConsumption)));
+
+
+
+
+
+
+
         Collections.sort(listAircraft, new Comparator<Aircraft>() {
             public int compare(Aircraft o1, Aircraft o2) {
                 return o1.compareTo(o2);

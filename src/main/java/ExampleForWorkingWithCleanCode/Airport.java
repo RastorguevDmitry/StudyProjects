@@ -1,9 +1,9 @@
 package ExampleForWorkingWithCleanCode;
 
+import ExampleForWorkingWithCleanCode.Planes.ExperimentalPlane;
 import ExampleForWorkingWithCleanCode.Planes.MilitaryPlane;
 import ExampleForWorkingWithCleanCode.Planes.PassengerPlane;
 import ExampleForWorkingWithCleanCode.Planes.Plane;
-import ExampleForWorkingWithCleanCode.Planes.experimentalPlane;
 import ExampleForWorkingWithCleanCode.models.MilitaryType;
 
 
@@ -49,14 +49,14 @@ public class Airport {
 
     }
 
-    public List<experimentalPlane> getExperimentalPlanes() {
-        List<experimentalPlane> experimentalPlanes = new ArrayList<>();
+    public List<ExperimentalPlane> getExperimentalPlanes() {
+        List<ExperimentalPlane> ExperimentalPlanes = new ArrayList<>();
         for (Plane plane : planes) {
-            if (plane instanceof experimentalPlane) {
-                experimentalPlanes.add((experimentalPlane) plane);
+            if (plane instanceof ExperimentalPlane) {
+                ExperimentalPlanes.add((ExperimentalPlane) plane);
             }
         }
-        return experimentalPlanes;
+        return ExperimentalPlanes;
     }
 
     public List<PassengerPlane> getPassengerPlanes() {
@@ -84,7 +84,7 @@ public class Airport {
     public Airport sortByMaxDistance() {
         Collections.sort(planes, new Comparator<Plane>() {
             public int compare(Plane o1, Plane o2) {
-                return o1.Get_Max_Flight_Distance() - o2.Get_Max_Flight_Distance();
+                return o1.GetMaxFlightDistance() - o2.GetMaxFlightDistance();
             }
         });
         return this;
